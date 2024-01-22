@@ -10,35 +10,35 @@
   <body>
     <div class="container">
       <div class="title"></div>
-      <div class="display">123456789</div>
+      <div class="display">0</div>
       <div class="numpad">
         <div class="row">
-          <button class="ac-key">AC</button>
-          <button class="function-key">⌫</button>
+          <button class="ac-key" onclick="acKey()">AC</button>
+          <button class="function-key" onclick="backspaceKey()">⌫</button>
           <button class="function-key">+/-</button>
           <button class="function-key">/</button>
         </div>
         <div class="row">
-          <button class="num-key">7</button>
-          <button class="num-key">8</button>
-          <button class="num-key">9</button>
+          <button class="num-key" onclick="numKey('7')">7</button>
+          <button class="num-key" onclick="numKey('8')">8</button>
+          <button class="num-key" onclick="numKey('9')">9</button>
           <button class="function-key">*</button>
         </div>
         <div class="row">
-          <button class="num-key">4</button>
-          <button class="num-key">5</button>
-          <button class="num-key">6</button>
+          <button class="num-key" onclick="numKey('4')">4</button>
+          <button class="num-key" onclick="numKey('5')">5</button>
+          <button class="num-key" onclick="numKey('6')">6</button>
           <button class="function-key">-</button>
         </div>
         <div class="row">
-          <button class="num-key">1</button>
-          <button class="num-key">2</button>
-          <button class="num-key">3</button>
+          <button class="num-key" onclick="numKey('1')">1</button>
+          <button class="num-key" onclick="numKey('2')">2</button>
+          <button class="num-key" onclick="numKey('3')">3</button>
           <button class="function-key">+</button>
         </div>
         <div class="row">
           <button class="function-key">.</button>
-          <button class="num-key">0</button>
+          <button class="num-key" onclick="numKey('0')">0</button>
           <button class="equals-key">=</button>
         </div>
       </div>
