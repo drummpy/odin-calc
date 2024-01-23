@@ -1,13 +1,15 @@
 function numKey(key) {
   console.log(key);
-  if (firstNum === undefined) {
-    firstNum = key;
+  currentNum = numCheck();
+  if (currentNum === undefined) {
+    currentNum = key;
   } else {
-    if (firstNum.length < 21) {
-      firstNum = firstNum + key;
+    if (currentNum.length < 21) {
+      currentNum = currentNum + key;
     }
   }
-  display.textContent = firstNum;
+  display.textContent = currentNum;
+  numAssign(currentNum);
 }
 
 function acKey() {
@@ -18,20 +20,40 @@ function acKey() {
 }
 
 function backspaceKey() {
-  if (firstNum === undefined || firstNum.length === 1) {
+  currentNum = numCheck();
+  if (currentNum === undefined || currentNum.length === 1) {
     console.log("empty");
     display.textContent = 0;
-    firstNum = undefined;
-  } else if (firstNum.length > 1) {
-    array = [...firstNum];
+    currentNum = undefined;
+    numAssign(currentNum);
+  } else if (currentNum.length > 1) {
+    array = [...currentNum];
     array.splice(-1, 1);
-    firstNum = array.join("");
+    currentNum = array.join("");
     console.log(array);
-    display.textContent = firstNum;
+    display.textContent = currentNum;
+    numAssign(currentNum);
+  }
+}
+
+function numCheck() {
+  if (operator === undefined) {
+    return firstNum;
+  } else {
+    return secondNum;
+  }
+}
+
+function numAssign(num) {
+  if (operator === undefined) {
+    firstNum = num;
+  } else {
+    secondNum = num;
   }
 }
 
 let firstNum = undefined;
 let secondNum = undefined;
+let operator = undefined;
 
 display = document.querySelector(".display");
