@@ -36,6 +36,17 @@ function backspaceKey() {
   }
 }
 
+function decimalKey() {
+  currentNum = numCheck();
+  if (currentNum === undefined) {
+    console.log(".");
+    numAssign("0.");
+    display.textContent = "0.";
+  } else if (!currentNum.includes(".")) {
+    numKey(".");
+  }
+}
+
 function numCheck() {
   if (operator === undefined) {
     return firstNum;
