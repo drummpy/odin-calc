@@ -114,6 +114,15 @@ function assignResult(num) {
   display.textContent = firstNum;
 }
 
+function changeSign() {
+  currentNum = numCheck();
+  if (currentNum !== undefined) {
+    currentNum = currentNum * -1;
+    display.textContent = currentNum;
+    numAssign(currentNum);
+  }
+}
+
 let firstNum = undefined;
 let secondNum = undefined;
 let operator = undefined;
